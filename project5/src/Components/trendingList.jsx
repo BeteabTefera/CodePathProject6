@@ -7,7 +7,7 @@ const Trending = () => {
 
     return (
         <div> 
-            <h4> Trending Animes </h4>
+            <h2> Brewery Near You </h2>
             <ul>
 
             </ul>
