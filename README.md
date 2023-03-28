@@ -2,30 +2,31 @@
 
 Submitted by: **Beteab Tefera**
 
-This web app: **insert description**
+This web app: **Uses Brewery Api to gather data and allow an easy filtering mechanism**
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] **The list displays a list of data fetched using an API call**
-- [ ] **Data uses the useEffect React hook and async/await syntax**
-- [ ] **The app dashboard includes at least three summary statistics about the data such as**
-  - [ ] *insert details*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **The list displays a list of data fetched using an API call**
+- [x] **Data uses the useEffect React hook and async/await syntax**
+- [x] **The app dashboard includes at least three summary statistics about the data such as**
+  - [x] *All Brewery that can be called in one api call(according to the api 50 is max)*
+  - [x] *Categorized Brewery type selection to easily filter. For example "Large", "Nano", "Micro"*
+  - [x] *Summary of available brewery in US. State selection of 50 state choices*
+- [x] **A search bar allows the user to search for an item in the fetched data**
+- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types such as a text input, a selection, or a slider
-- [ ] The user can enter specific bounds for filter values
-
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types such as a text input, a selection, or a slider
 The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
+* [x] Implemented the Use of GeoLocation to sort the brewery in my location by distance
+* [x] Created A SideNavBar to Collect the list of Brewery in my vicinity and organize them based on distance. 
+![image](https://user-images.githubusercontent.com/88134569/228113664-3196c9fa-ff2d-403f-b32b-93948b92c8f7.png)
 
 ## Video Walkthrough
 
@@ -34,7 +35,7 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with LiceCap 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
