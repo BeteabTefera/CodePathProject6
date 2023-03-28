@@ -4,19 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
+ul{
+  list-style:none;
+  margin: 25px 50px 75px 30px;
+}
+li{
+  padding: 25px;
+  border-bottom: solid 3px;
+}
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 .sidenav{
   height: 100%;
   width: 25%;
@@ -24,7 +20,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #a5a5a5;
+  background-color: rgba(235, 235, 235, 0.8); /* Set the alpha value to 0.8 for 80% opacity */
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 10px;
@@ -34,6 +30,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
