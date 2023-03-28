@@ -149,8 +149,8 @@ function App() {
   const [latitude, setLatitude] = useState(null);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      setLongitude(position.coords.longitude);
-      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude.toFixed(4));
+      setLatitude(position.coords.latitude.toFixed(4));
     });
   }, []);
 

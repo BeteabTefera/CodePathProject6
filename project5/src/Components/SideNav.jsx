@@ -30,7 +30,7 @@ const SideNav = ({longitude, latitude}) => {
       <p> This is a list of breweries near you. </p>
       <ul>
         {breweryNearList.map((brewery) => (
-          <li key={brewery.id}>
+          <li className='sideNav-list' key={brewery.id}>
               <h2>{brewery.name}</h2>
               <p>{brewery.street}</p>
               <p>{brewery.city}</p>
