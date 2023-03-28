@@ -80,6 +80,7 @@ function App() {
 
   const handleTypeSelect = (e) => {
     setSelectedType(e.target.value);
+    filterByType(e.target.value);
   };
 
   //This function is used to create a dropdown list of us states.
@@ -139,6 +140,7 @@ function App() {
 
   const handleStateSelect = (e) => {
     setSelectedState(e.target.value);
+    filterByState(e.target.value);
   };
 
 
@@ -154,7 +156,7 @@ function App() {
 
   return (
     <div className="App">
-      Current Location: {longitude}, {latitude};
+      Current Location: {latitude}, {longitude};
       <h1>Hello Brewery🍺</h1>
       <SideNav latitude={latitude} longitude={longitude} />
 
@@ -181,10 +183,11 @@ function App() {
       </div>
 
       <div className="Brewery List">
-        {searchInput.length > 0
+        {searchInput.length > 0 || selectedType.length > 0 || selectedState.length > 0
           ? filteredBreweryList.map((brewery) => (
               <div key={brewery.id}>
                 <h2>{brewery.name}</h2>
+                <p>Brewery Type: {brewery.brewery_type.toUpperCase()}</p>
                 <p>{brewery.street}</p>
                 <p>{brewery.city}</p>
                 <p>{brewery.state}</p>
@@ -192,7 +195,7 @@ function App() {
                 <p>{formatPhoneNumber(brewery.phone)}</p>
                 <a href={brewery.website_url} target="_blank">
                   <button className="button">
-                      StoreLink
+                      Store Link
                   </button>
                </a>
               </div>
@@ -201,13 +204,14 @@ function App() {
               <ul>
                 <li key={brewery.id}>
                     <h2>{brewery.name}</h2>
+                    <p>Brewery Type: {brewery.brewery_type.toUpperCase()}</p>
                     <p>{brewery.street}</p>
                     <p>{brewery.city}</p>
                     <p>{brewery.state}</p>
                     <p>{formatPhoneNumber(brewery.phone)}</p>
                     <a href={brewery.website_url} target="_blank">
                         <button className="button">
-                            StoreLink
+                            Store Link
                         </button>
                     </a>
                 </li>
