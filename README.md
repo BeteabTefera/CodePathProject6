@@ -1,4 +1,4 @@
-# Web Development Project 5 - *Name of App Here*
+# Web Development Project 5 - *Project5*
 
 Submitted by: **Beteab Tefera**
 
@@ -20,9 +20,8 @@ The following **required** functionality is completed:
 - [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
-
-- [x] Multiple filters can be applied simultaneously
 - [x] Filters use different input types such as a text input, a selection, or a slider
+
 The following **additional** features are implemented:
 * [x] Implemented the Use of GeoLocation to sort the brewery in my location by distance
 * [x] Created A SideNavBar to Collect the list of Brewery in my vicinity and organize them based on distance. 
@@ -32,7 +31,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/BeteabTefera/CodePathProject5/blob/main/Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with LiceCap 
@@ -44,10 +43,13 @@ GIF created with LiceCap
 ## Notes
 
 Describe any challenges encountered while building the app.
+The biggest challenge is attempting to implement
+- [ ] Multiple filters can be applied simultaneously
+
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Beteab Tefera]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
