@@ -39,8 +39,7 @@ GIF created with LiceCap
 ## Notes
 
 Describe any challenges encountered while building the app.
-The biggest challenge is attempting to implement
-- [ ] Multiple filters can be applied simultaneously
+The biggest challenge is attempting to implement the charting system
 
 
 ## License
