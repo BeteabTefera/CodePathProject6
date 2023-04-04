@@ -12,9 +12,26 @@ import {
 
 const BrewChart = () => {
     const [histData, setHistData] = useState(null);
-    
+    const [histData2, setHistData2] = useState(null);
+    //MetaData per Type
+    const typeList = ['micro', 'nano', 'regional', 'brewpub', 'large', 'planning', 'bar', 'contract', 'proprietor']
+    useEffect(() => {
+        const getBrewHist = async () => {
+            const promises = typeList.map(async (type) => {
+                const response = await fetch(`https://api.openbrewerydb.org/v1/breweries/meta?by_type=${type}`);
+                const json = await response.json();
+                return { type: type, data: json };
+            });
+            const results = await Promise.all(promises);
+            setHistData2(results);
+        };
+        getBrewHist().catch(console.error);
+    }, []);
+
+
+
     //MetaData per Country
-    const countryList = ['austria', 'england', 'france', 'Isle_of_Man', 'ireland', 'poland', 'portugal', 'scotland', 'south_korea', 'spain', 'sweden']    
+    const countryList = ['austria', 'england', 'france', 'Isle_of_Man', 'ireland', 'poland', 'portugal', 'scotland', 'south_korea', 'united_states']    
         useEffect(() => {
             const getBrewHist = async () => {
                 const promises = countryList.map(async (country) => {
@@ -55,8 +72,8 @@ const BrewChart = () => {
                 <CartesianGrid stroke="#ccc"  strokeDasharray="5 5" />
                 <XAxis
                   dataKey="breweries"
-                  type="number"
-                  domain={[0, "dataMax"]}
+                  type="category"
+                  domain={[0, 5000]}
                   label={{ value: "Total Breweries", position: "bottom" }}
                 />
                 <YAxis
@@ -66,6 +83,39 @@ const BrewChart = () => {
                 />
                 <Tooltip />
                 <Line type="monotone" dataKey="name" stroke="#8884d8"/>
+              </LineChart>
+            </div>
+          ) : null}
+
+          {histData2 ? (// rendering only if API call actually returned us data
+            <div>
+              <br></br>
+              <h2>Brewery By Type</h2>
+              <LineChart 
+                width={800}
+                height={400}
+                data={histData2}
+                margin={{
+                    top: 10,
+                    right: 30,
+                    left: 100,
+                    bottom: 30,
+                  }}
+              >
+                <CartesianGrid stroke="#ccc"  strokeDasharray="5 5" />
+                <XAxis
+                  dataKey="type"
+                  type="category"
+                  label={{ value: "Brewery Type", position: "bottom" }}
+                />
+                <YAxis
+                  dataKey="data.total"
+                  type="number"
+                  domain={[0, 5000]}
+                  label={{ position: "left", angle: -90 }}
+                />
+                <Tooltip />
+                <Line type="monotone" dataKey="data.total" stroke="#8884d8"/>
               </LineChart>
             </div>
           ) : null}

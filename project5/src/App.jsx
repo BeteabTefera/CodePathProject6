@@ -159,9 +159,9 @@ function App() {
 
   return (
     <div className="App">
-      Current Location: {latitude}, {longitude}
+      Current Location: {45.134}, {-93.3495}
       <h1>Hello Brewery🍺</h1>
-      <SideNav latitude={latitude} longitude={longitude}/>
+      <SideNav latitude={45.134} longitude={-93.3495}/>
       <div className="filter">
         <input type="text" placeholder="Search by name" onChange={(inputString) => searchItems(inputString.target.value)}/>
 
