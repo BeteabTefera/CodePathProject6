@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import SideNav from "./Components/SideNav";
+import { Link } from 'react-router-dom';
 
 function formatPhoneNumber(phoneNumberString) {
   const cleaned = ('' + phoneNumberString).replace(/\D/g, '');
@@ -19,9 +20,10 @@ function App() {
   
 
   const fetchBreweries = async () => {
-    const response = await fetch('https://api.openbrewerydb.org/breweries?');
+    const response = await fetch('https://api.openbrewerydb.org/v1/breweries?per_page=200');
     const json = await response.json();
     setBreweryList(json);
+
 
   };
   useEffect(() => {
@@ -156,9 +158,8 @@ function App() {
 
   return (
     <div className="App">
-      Current Location: {latitude}, {longitude};
+      Current Location: {latitude}, {longitude}
       <h1>Hello Brewery🍺</h1>
-      <SideNav latitude={latitude} longitude={longitude} />
 
       <div className="filter">
         <input type="text" placeholder="Search by name" onChange={(inputString) => searchItems(inputString.target.value)}/>
@@ -188,16 +189,15 @@ function App() {
               <div key={brewery.id}>
                 <h2>{brewery.name}</h2>
                 <p>Brewery Type: {brewery.brewery_type.toUpperCase()}</p>
-                <p>{brewery.street}</p>
-                <p>{brewery.city}</p>
-                <p>{brewery.state}</p>
-                <p>{brewery.country}</p>
                 <p>{formatPhoneNumber(brewery.phone)}</p>
-                <a href={brewery.website_url} target="_blank">
-                  <button className="button">
-                      Store Link
-                  </button>
-               </a>
+                <Link 
+                      to={`/brewDetail/${brewery.id}`}
+                      key={brewery.id}
+                    >
+                      <button className="button">
+                          More Info
+                      </button>
+                </Link>
               </div>
             ))
           : breweryList &&  breweryList.map((brewery) => (
@@ -205,15 +205,17 @@ function App() {
                 <li key={brewery.id}>
                     <h2>{brewery.name}</h2>
                     <p>Brewery Type: {brewery.brewery_type.toUpperCase()}</p>
-                    <p>{brewery.street}</p>
-                    <p>{brewery.city}</p>
-                    <p>{brewery.state}</p>
                     <p>{formatPhoneNumber(brewery.phone)}</p>
-                    <a href={brewery.website_url} target="_blank">
-                        <button className="button">
-                            Store Link
-                        </button>
-                    </a>
+                    <Link 
+                      to={`/brewDetail/${brewery.id}`}
+                      key={brewery.id}
+                    >
+                      <button className="button">
+                          More Info
+                      </button>
+                    </Link>
+
+  
                 </li>
               </ul>
             ))

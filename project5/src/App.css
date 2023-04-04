@@ -46,10 +46,9 @@ li.sideNav-list{
   }
 }
 
-.card {
-  padding: 2em;
+nav {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
 }
 
-.read-the-docs {
-  color: #888;
-}
