@@ -194,7 +194,6 @@ function App() {
               <div key={brewery.id}>
                 <h2>{brewery.name}</h2>
                 <p>Brewery Type: {brewery.brewery_type.toUpperCase()}</p>
-                <p>{formatPhoneNumber(brewery.phone)}</p>
                 <Link 
                       to={`/brewDetail/${brewery.id}`}
                       key={brewery.id}
@@ -210,7 +209,6 @@ function App() {
                 <li key={brewery.id}>
                     <h2>{brewery.name}</h2>
                     <p>Brewery Type: {brewery.brewery_type.toUpperCase()}</p>
-                    <p>{formatPhoneNumber(brewery.phone)}</p>
                     <Link 
                       to={`/brewDetail/${brewery.id}`}
                       key={brewery.id}
