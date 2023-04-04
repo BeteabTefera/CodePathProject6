@@ -1,4 +1,4 @@
-# Web Development Project 6 - *Hello Brewery*
+# Web Development Project 5-6 - *Hello Brewery V.2*
 
 Submitted by: **Beteab Tefera**
 
