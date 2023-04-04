@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import {
   LineChart,
   Line,
+  BarChart,
+  Bar,
   CartesianGrid,
   XAxis,
   YAxis,
@@ -31,7 +33,7 @@ const BrewChart = () => {
 
 
     //MetaData per Country
-    const countryList = ['austria', 'england', 'france', 'Isle_of_Man', 'ireland', 'poland', 'portugal', 'scotland', 'south_korea', 'united_states']    
+    const countryList = ['austria', 'england', 'france', 'Isle_of_Man', 'ireland', 'poland', 'portugal', 'scotland', 'south_korea']    
         useEffect(() => {
             const getBrewHist = async () => {
                 const promises = countryList.map(async (country) => {
@@ -58,8 +60,8 @@ const BrewChart = () => {
             <div>
               <br></br>
               <h2>Brewery By Country</h2>
-              <LineChart
-                width={800}
+              <BarChart
+                width={1000}
                 height={400}
                 data={countryData}
                 margin={{
@@ -71,19 +73,16 @@ const BrewChart = () => {
               >
                 <CartesianGrid stroke="#ccc"  strokeDasharray="5 5" />
                 <XAxis
-                  dataKey="breweries"
-                  type="category"
-                  domain={[0, 5000]}
-                  label={{ value: "Total Breweries", position: "bottom" }}
+                  dataKey="name"
+                  label={{ value: "Country", position: "bottom" }}
                 />
                 <YAxis
-                  dataKey="name"
-                  type="category"
-                  label={{ position: "left", angle: -90 }}
+                  dataKey="breweries"
+                  label={{ position: "left", angle: -90, value: "Total Breweries" }}
                 />
                 <Tooltip />
-                <Line type="monotone" dataKey="name" stroke="#8884d8"/>
-              </LineChart>
+                <Bar dataKey="breweries" fill="#8884d8"/>
+              </BarChart>
             </div>
           ) : null}
 
