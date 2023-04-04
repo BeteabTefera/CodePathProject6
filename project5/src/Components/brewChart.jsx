@@ -14,8 +14,7 @@ const BrewChart = () => {
     const [histData, setHistData] = useState(null);
     
     //MetaData per Country
-    const countryList = ['austria', 'england', 'france', 'Isle_of_Man', 'ireland', 'poland', 'portugal', 'scotland', 'south_korea', 'united_states']
-    
+    const countryList = ['austria', 'england', 'france', 'Isle_of_Man', 'ireland', 'poland', 'portugal', 'scotland', 'south_korea', 'spain', 'sweden']    
         useEffect(() => {
             const getBrewHist = async () => {
                 const promises = countryList.map(async (country) => {
@@ -49,11 +48,11 @@ const BrewChart = () => {
                 margin={{
                     top: 10,
                     right: 30,
-                    left: 150,
+                    left: 100,
                     bottom: 30,
                   }}
               >
-                <CartesianGrid strokeDasharray="3 3" />
+                <CartesianGrid stroke="#ccc"  strokeDasharray="5 5" />
                 <XAxis
                   dataKey="breweries"
                   type="number"
@@ -66,7 +65,7 @@ const BrewChart = () => {
                   label={{ position: "left", angle: -90 }}
                 />
                 <Tooltip />
-                <Line type="monotone" dataKey="breweries" stroke="#8884d8" />
+                <Line type="monotone" dataKey="name" stroke="#8884d8"/>
               </LineChart>
             </div>
           ) : null}

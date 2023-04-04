@@ -161,7 +161,7 @@ function App() {
     <div className="App">
       Current Location: {latitude}, {longitude}
       <h1>Hello Brewery🍺</h1>
-
+      <SideNav latitude={latitude} longitude={longitude}/>
       <div className="filter">
         <input type="text" placeholder="Search by name" onChange={(inputString) => searchItems(inputString.target.value)}/>
 
@@ -183,7 +183,8 @@ function App() {
           ))}
         </select>
       </div>
-      <div className='Brewery Chart'>
+
+      <div className='rightnav'>
         <BrewChart/>
       </div>
       <br/>
