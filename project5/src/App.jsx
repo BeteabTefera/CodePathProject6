@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import SideNav from "./Components/SideNav";
+import BrewChart from './Components/brewChart';
 import { Link } from 'react-router-dom';
 
 function formatPhoneNumber(phoneNumberString) {
@@ -182,7 +183,10 @@ function App() {
           ))}
         </select>
       </div>
-
+      <div className='Brewery Chart'>
+        <BrewChart/>
+      </div>
+      <br/>
       <div className="Brewery List">
         {searchInput.length > 0 || selectedType.length > 0 || selectedState.length > 0
           ? filteredBreweryList.map((brewery) => (
@@ -214,14 +218,13 @@ function App() {
                           More Info
                       </button>
                     </Link>
-
-  
                 </li>
               </ul>
             ))
         }
-
       </div>
+
+
     </div>
   )
 }
